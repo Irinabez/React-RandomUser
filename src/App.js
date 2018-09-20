@@ -12,7 +12,7 @@ class App extends Component {
   countChange(newCount){
     this.setState({cnt: newCount});
   }
-  
+
   render(){
     return (
       <div>
