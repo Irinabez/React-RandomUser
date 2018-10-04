@@ -18,19 +18,23 @@ class App extends Component {
             .then(result => this.setState({person: result.data.results[0]}))
             .catch(error => console.log(error))
     }
+    componentDidMount() {
+        this.loadNewUser();
+    }
 
-  
-  render(){
+    render(){
     return (
       <div>
         <h1>Random User</h1>
+          {this.state.person.name &&
+          <RandUser
+              user={this.state.person}
+          />}
+
         <Loader
             loadNewUser={() => this.loadNewUser()}
         />
-        {this.state.person.name &&
-        <RandUser
-            user={this.state.person}
-        />}
+
       </div>
     );
   }

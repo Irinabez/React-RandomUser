@@ -5,6 +5,7 @@ function Loader(props) {
 
 
     return (
+
             <button onClick={() => props.loadNewUser()}
                     className={'button'}>LOAD USER</button>
     );
